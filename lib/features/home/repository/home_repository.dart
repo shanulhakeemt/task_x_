@@ -18,14 +18,10 @@ class HomeRepository extends GetxController {
       final res = await http.get(uri);
 
       if (res.statusCode == 200) {
-        final resBodyMap = jsonDecode(res.body);
-        print("sss");
-        print(resBodyMap[0]);
+        final resBodyMap = jsonDecode(res.body);   
         final List<ProductModel> productModels = (resBodyMap as List)
             .map((e) => ProductModel.fromMap(e as Map<dynamic, dynamic>))
             .toList();
-        print("dd");
-        print(productModels.first.toMap());
         return right(productModels);
       } else {
         return left(AppFailure("Invalid url"));

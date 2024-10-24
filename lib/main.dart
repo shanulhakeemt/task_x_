@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_x/core/theme/theme.dart';
-import 'package:task_x/features/home/view/pages/screen_home.dart';
 import 'package:task_x/features/splash/view/pages/splash_screen.dart';
 
 Future<void> main() async {

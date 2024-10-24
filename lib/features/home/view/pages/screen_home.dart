@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_x/core/theme/app_pallete.dart';
 import 'package:task_x/features/home/controller/home_controller.dart';
@@ -133,9 +131,10 @@ class CustomGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: isNewArrivels
-          ? controller.productModels.length ~/ 2
-          : controller.productModels.length,
+      itemCount:isNewArrivels?
+      controller.productModels.length~/2
+      :       controller.productModels.length
+,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         mainAxisSpacing: 4,
         crossAxisSpacing: 4,
@@ -151,10 +150,9 @@ class CustomGridView extends StatelessWidget {
             productModels = productModels + [controller.productModels[i]];
           }
         }
-        final productModel = isNewArrivels
-            ? productModels[index]
-            : controller.productModels[index];
-        return ProductCard(productModel: productModel);
+     
+
+        return ProductCard(productModel: isNewArrivels?productModels[index]:controller.productModels[index]);
       },
     );
   }

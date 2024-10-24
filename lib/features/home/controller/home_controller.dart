@@ -7,6 +7,7 @@ class HomeController extends GetxController {
 
   List<ProductModel> productModels = [];
   int currentTabIndex = 0;
+  String  search = '';
 
   Future<void> getProductModels() async {
     final res = await Get.put(HomeRepository()).getProductModels();
@@ -18,6 +19,10 @@ class HomeController extends GetxController {
 
   void updateTabIndex(int inx) {
     currentTabIndex = inx;
+    update();
+  }
+   void updateSearchString(String s) {
+    search = s;
     update();
   }
 
