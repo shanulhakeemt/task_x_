@@ -27,20 +27,27 @@ class ProductDetailsPage extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
-                child: Image.network(
-                  productModel.image, // URL of the image
-                  height: 320,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  errorBuilder: (BuildContext context, Object error,
-                      StackTrace? stackTrace) {
-                    // Return a placeholder widget if the image fails to load
-                    return Image.asset(
-                      AssetsConstants.imgProduct1,
-                      scale: 4,
-                    );
-                  },
+                child: Image.asset(
+                  AssetsConstants.imgProduct1,
+                  scale: 4,
                 ),
+                // child: Image.network(
+                //   productModel.image.isNotEmpty
+                //       ? productModel.image
+                //       : 'https://picsum.photos/320/180', // Use a placeholder image if URL is empty
+                //   height: 320,
+                //   width: double.infinity,
+                //   fit: BoxFit.cover,
+                //   errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
+                //     // Return a placeholder widget if the image fails to load
+                //     return Image.asset(
+                //       AssetsConstants.imgProduct1,
+                //       height: 320,
+                //       width: double.infinity,
+                //       fit: BoxFit.cover,
+                //     );
+                //   },
+                // ),
               ),
               const SizedBox(height: 16.0),
               // Product name
