@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_x/core/theme/app_pallete.dart';
 import 'package:task_x/features/home/controller/home_controller.dart';
-import 'package:task_x/features/home/repository/home_repository.dart';
 import 'package:task_x/features/home/view/pages/screen_home.dart';
 
 class SplashScreen extends StatefulWidget {

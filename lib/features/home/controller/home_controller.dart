@@ -6,16 +6,21 @@ class HomeController extends GetxController {
   static HomeController get instance => Get.find();
 
   List<ProductModel> productModels = [];
+  int currentTabIndex = 0;
 
   Future<void> getProductModels() async {
     final res = await Get.put(HomeRepository()).getProductModels();
     res.fold((l) {}, (listOfProductModels) {
       productModels = listOfProductModels;
+      update();
     });
   }
 
-  @override
-  Future<void> onReady() async {
- 
+  void updateTabIndex(int inx) {
+    currentTabIndex = inx;
+    update();
   }
+
+  @override
+  Future<void> onReady() async {}
 }
